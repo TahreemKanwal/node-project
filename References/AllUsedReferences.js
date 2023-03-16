@@ -12,6 +12,8 @@ const PathToSchemaFiles=path.join(RootPath,"Schema");
 //.............mongoose...............//
 const mongoose = require ('mongoose');
 
+
+
 mongoose.set('strictQuery', false);
 const url = "mongodb://localhost:27017/nodeClass";
 const mongoosePackage=mongoose.connect(url);
