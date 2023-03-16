@@ -7,4 +7,5 @@ const StudentSchema=new customRefrences.mongoose.Schema({
 });
 module.exports={
     StudentSchema:StudentSchema
+    
 }
