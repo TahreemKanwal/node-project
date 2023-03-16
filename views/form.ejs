@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Form</title>
+  </head>
+  <body>
+    <form action="<%=path%>" method="POST">
+  
+  <%- include('component/include')%>
+
+
+    </form>
+
+    <h1 align="center">STUDENT LIST</h1>
+    <table border="2px" style="width: 75%">
+      <tr border="2px" style="width: 75%">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+      <h1><a href="/ClearAll">CLEAR ALL</a></h1>
+      <%if(allStudent.length>0){%> <%allStudent.map((item)=>{%>
+
+      <tr>
+        <td><%=item._id%></td>
+        <td><%=item.name%></td>
+        <td><%=item.age%></td>
+        <td><%=item.city%></td>
+        <td><%=item.email%></td>
+        <td>
+          <a href="/delete?student_email=<%=item.email%>">DELETE</a>&ensp;<a
+            href="/editStudent?student_email=<%=item.email%>&student_age=<%=item.age%>&student_city=<%=item.city%>&student_name=<%=item.name%>"
+            >EDIT</a
+          >
+         
+        </td>
+      </tr>
+
+      <% })%> <%} else{%>
+      <tr>
+        <td colspan="6">
+          <h1 align="center">NO STUDENT FOUND</h1>
+        </td>
+      </tr>
+      <%}%>
+    </table>
+  </body>
+</html>
